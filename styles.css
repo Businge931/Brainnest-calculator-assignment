@@ -1,0 +1,158 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Itim", cursive;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  /* background-image: linear-gradient(to bottom right, #b87ae8 0, #f1a4a4); */
+}
+
+#calc__container {
+  background-color: #ececec;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  gap: 2px;
+  padding: 25px 8px;
+  box-shadow: 0px 8px 15px 5px rgba(71, 8, 77, 0.3);
+}
+
+/* Calculator Screen */
+#display__operation {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100px;
+  color: #36bbe3;
+  margin: 15px 0 25px;
+  padding: 5px 8px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #1e1e1e;
+  border: 2px solid #101010;
+}
+
+.current-value {
+  font-size: 38px;
+}
+
+.previous-value {
+  font-size: 20px;
+}
+
+button {
+  margin: 1px;
+  border-radius: 5%;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  font-family: "Itim", cursive;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Number Buttons */
+.number:hover {
+  background-color: #ffbffa;
+  border: 2px solid #f9a6f3;
+}
+
+/* Equal Button */
+.equals {
+  background-color: #f4ca26;
+  color: #664800;
+}
+
+.equals:hover {
+  background-color: #fbdb5f;
+  border: 2px solid #f4ca26;
+}
+
+/* Operator Buttons */
+.operator {
+  background-color: #b87ae8;
+  color: #40025b;
+}
+
+.operator:hover {
+  background-color: #cb93f7;
+  border: 2px solid #b87ae8;
+}
+
+/* All Clear, Change Number Sign and Percentage Button */
+.all__clear,
+.change__sign,
+.percentage {
+  background-color: #36bbe3;
+  color: #02185b;
+}
+
+.all__clear:hover,
+.change__sign:hover,
+.percentage:hover {
+  background-color: #53cdf2;
+  border: 2px solid #36bbe3;
+}
+
+/* Clear one space and Decimal Buttons */
+.clear {
+  font-size: 15px;
+  font-weight: bold;
+}
+.clear,
+.decimal {
+  background-color: #ffc4c4;
+  color: #713636;
+}
+
+.clear:hover,
+.decimal:hover {
+  background-color: #ffd5d5;
+  border: 2px solid #ffc4c4;
+  font-size: 20px;
+}
+
+/* Media Query */
+@media only screen and (max-width: 450px) {
+  #calc__container {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(80px, auto) repeat(5, 60px);
+  }
+  .current-value {
+    font-size: 30px;
+  }
+  .previous-value {
+    font-size: 16px;
+  }
+  button {
+    font-size: 25px;
+  }
+}
